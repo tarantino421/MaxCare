@@ -190,6 +190,7 @@ h6 {
   color: #4ca89c;
 }
 .wrapper .main .section__hero .hero__form-container form .form__item input {
+  width: 100%;
   background-color: #edf7f6;
   border-radius: 0.5rem;
   font-size: 1rem !important;
@@ -205,6 +206,7 @@ h6 {
   opacity: 1; /* Робимо підказку повністю видимою */
 }
 .wrapper .main .section__hero .hero__form-container form .form__item select {
+  width: 100%;
   height: 48px;
   font-size: 1rem !important;
   border-radius: 0.5rem;
@@ -430,10 +432,10 @@ h6 {
   }
   .wrapper .main .section__doctors .doctors__content {
     padding: 0 16px;
-    gap: 24px;
+    gap: 1rem;
   }
   .wrapper .main .section__doctors .doctors__content .item {
-    flex: 0 0 0; /* Додаємо гнучкість */
+    flex: 1 0 0; /* Додаємо гнучкість */
     min-width: inherit !important; /* Мінімальна ширина перед переходом на наступний рядок */
     max-width: 20rem !important;
     width: 100%;
@@ -445,7 +447,7 @@ h6 {
     align-items: center;
   }
   .wrapper .main .section__doctors .doctors__content .item img {
-    max-width: 230px;
+    max-width: none !important;
     max-height: 330px;
     border-radius: 0.375rem;
     object-fit: cover;
@@ -481,7 +483,13 @@ h6 {
   .wrapper .main .section__testimonials {
     gap: 2rem;
   }
+  .wrapper .main .section__testimonials .testimonials__content {
+    gap: 1rem;
+  }
   .wrapper .main .section__testimonials .item:nth-child(n+5) {
     display: none;
+  }
+  .wrapper .main .section__video {
+    gap: 2rem;
   }
 }
