@@ -6,6 +6,11 @@ body {
   font-family: "Zain";
 }
 
+*:focus {
+  outline: 1px solid #4ca89c;
+  outline-offset: 2px;
+}
+
 *,
 *::before,
 *::after {
@@ -188,15 +193,27 @@ h6 {
   background-color: #edf7f6;
   border-radius: 0.5rem;
   font-size: 1rem !important;
-  padding: 12px 16px;
+  padding: 0 16px;
+  height: 48px;
   color: #acacac;
 }
+.wrapper .main .section__hero .hero__form-container form .form__item input:focus {
+  outline: 1px solid #4ca89c;
+}
+.wrapper .main .section__hero .hero__form-container form .form__item input::placeholder {
+  color: #acacac; /* Колір тексту підказки */
+  opacity: 1; /* Робимо підказку повністю видимою */
+}
 .wrapper .main .section__hero .hero__form-container form .form__item select {
+  height: 48px;
   font-size: 1rem !important;
   border-radius: 0.5rem;
   background-color: #edf7f6;
-  padding: 12px 16px;
+  padding: 0 16px;
   color: #acacac;
+}
+.wrapper .main .section__hero .hero__form-container form .form__item select:focus {
+  outline: 1px solid #4ca89c;
 }
 .wrapper .main .section__hero .hero__form-container form .main-btn {
   margin-top: 2rem;
@@ -217,6 +234,7 @@ h6 {
   height: 100%;
 }
 .wrapper .main .section__hero .heroSwiper .swiper-wrapper {
+  pointer-events: none;
   height: 100%;
   width: 100%;
 }
@@ -225,9 +243,14 @@ h6 {
   height: 100%;
 }
 .wrapper .main .section__hero .heroSwiper .swiper-wrapper .swiper-slide img {
+  transform: scale(100%);
+  transition: 3s;
   height: 100%;
   width: 100%;
   object-fit: cover;
+}
+.wrapper .main .section__hero .heroSwiper .swiper-wrapper .swiper-slide-active img {
+  transform: scale(103%);
 }
 .wrapper .main .section__doctors {
   display: flex;
@@ -246,8 +269,8 @@ h6 {
   flex: 1 1 400px; /* Додаємо гнучкість */
   max-width: 35rem;
   min-width: 30.375rem; /* Мінімальна ширина перед переходом на наступний рядок */
-  background-color: #ffffff;
   display: flex;
+  background-color: #ffffff;
   padding: 0.75rem;
   border-radius: 0.5rem;
   gap: 1.5rem;
@@ -304,11 +327,76 @@ h6 {
   color: #4ca89c;
   margin-top: auto;
 }
+.wrapper .main .section__testimonials {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+.wrapper .main .section__testimonials .testimonials__content {
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+.wrapper .main .section__testimonials .testimonials__content .item {
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.125rem;
+  background-color: #edf7f6;
+  height: 100%;
+}
+.wrapper .main .section__testimonials .testimonials__content .item .title {
+  display: flex;
+  justify-content: space-between;
+}
+.wrapper .main .section__testimonials .testimonials__content .item .title .column {
+  display: flex;
+  flex-direction: column;
+}
+.wrapper .main .section__testimonials .testimonials__content .item .title .column .name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #23485b;
+}
+.wrapper .main .section__testimonials .testimonials__content .item .title .column .stars {
+  display: flex;
+}
+.wrapper .main .section__testimonials .testimonials__content .item .title .date {
+  color: #23485b;
+}
+.wrapper .main .section__testimonials .testimonials__content .item p {
+  color: #4ca89c;
+}
+.wrapper .main .section__video {
+  display: flex;
+  padding-left: 16px;
+  padding-right: 16px;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  background-color: #edf7f6;
+}
+.wrapper .main .section__video h1 {
+  line-height: 100%;
+}
+.wrapper .main .section__video iframe {
+  aspect-ratio: 16/9;
+  max-width: 650px; /* Максимальна ширина блоку */
+  width: 100%;
+  border-radius: 8px;
+  border: none;
+}
 @media only screen and (max-width: 768px) {
+  .wrapper .t-title {
+    font-size: 1.75rem;
+  }
   .wrapper .header .header__content .header__logo img.logofull {
     display: none;
   }
   .wrapper .header .header__content .header__logo img.logomobile {
+    width: 80px;
     display: block;
   }
   .wrapper .header .header__content .header__menu {
@@ -389,5 +477,11 @@ h6 {
     font-size: 0.875rem;
     color: #4ca89c;
     margin-top: auto;
+  }
+  .wrapper .main .section__testimonials {
+    gap: 2rem;
+  }
+  .wrapper .main .section__testimonials .item:nth-child(n+5) {
+    display: none;
   }
 }
