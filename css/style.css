@@ -1,9 +1,8 @@
 @charset "UTF-8";
-@import url(https://fonts.googleapis.com/css?family=Vazirmath:regular,700,900);
-@import url(https://fonts.googleapis.com/css?family=Zain:regular,700,900);
+@import url(https://fonts.googleapis.com/css?family=Amiri:regular,700);
 body {
   font-weight: 400;
-  font-family: "Zain";
+  font-family: "amiri";
 }
 
 *:focus {
@@ -91,6 +90,7 @@ h6 {
 .t-title {
   text-align: center;
   font-size: 2.625rem;
+  line-height: 100%;
   color: #23485b;
   font-weight: 800;
 }
@@ -152,17 +152,24 @@ h6 {
 }
 .wrapper .main .section__hero {
   display: flex;
+  flex-direction: row-reverse;
   padding-top: 0rem;
   padding-bottom: 0rem;
 }
 .wrapper .main .section__hero .hero__form-container {
   display: flex;
   flex-direction: column;
-  max-width: 29rem;
+  max-width: 32rem;
   width: 100%;
   padding: 0 16px;
   justify-content: center;
   gap: 2rem;
+}
+.wrapper .main .section__hero .hero__form-container h1 {
+  font-size: 3rem;
+}
+.wrapper .main .section__hero .hero__form-container h1 span {
+  color: #4ca89c;
 }
 .wrapper .main .section__hero .hero__form-container p {
   margin-top: -2rem;
@@ -198,6 +205,11 @@ h6 {
   height: 48px;
   color: #acacac;
 }
+.wrapper .main .section__hero .hero__form-container form .form__item input[type=date] {
+  max-width: 32rem;
+  width: 100% !important;
+  box-sizing: border-box;
+}
 .wrapper .main .section__hero .hero__form-container form .form__item input:focus {
   outline: 1px solid #4ca89c;
 }
@@ -221,18 +233,19 @@ h6 {
   margin-top: 2rem;
 }
 .wrapper .main .section__hero .heroSwiper {
+  width: 100%;
   position: relative;
   height: 40rem;
-  margin-right: -10.9rem;
+  margin-left: -10.9rem;
 }
 .wrapper .main .section__hero .heroSwiper::after {
   z-index: 98;
   content: "";
   position: absolute;
   top: 0;
-  left: -1px;
+  right: -1px;
   width: 40%;
-  background: linear-gradient(to right, #ffffff, rgba(255, 255, 255, 0));
+  background: linear-gradient(to left, #ffffff, rgba(255, 255, 255, 0));
   height: 100%;
 }
 .wrapper .main .section__hero .heroSwiper .swiper-wrapper {
@@ -246,13 +259,54 @@ h6 {
 }
 .wrapper .main .section__hero .heroSwiper .swiper-wrapper .swiper-slide img {
   transform: scale(100%);
-  transition: 3s;
+  transition: 4s linear;
   height: 100%;
   width: 100%;
   object-fit: cover;
 }
 .wrapper .main .section__hero .heroSwiper .swiper-wrapper .swiper-slide-active img {
-  transform: scale(103%);
+  transform: scale(105%);
+}
+.wrapper .main .section__insurances .logos__wrapper {
+  overflow: hidden;
+  margin: auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 9.375rem;
+}
+.wrapper .main .section__insurances .logos__wrapper::after {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to right, #ffffff, rgba(255, 195, 160, 0));
+  width: 9rem;
+  height: 100%;
+}
+.wrapper .main .section__insurances .logos__wrapper::before {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: linear-gradient(to left, #ffffff, rgba(255, 195, 160, 0));
+  width: 9rem;
+  height: 100%;
+}
+.wrapper .main .section__insurances .logos__wrapper .logos__track {
+  white-space: nowrap;
+  display: flex;
+  align-items: baseline;
+  padding: 0 1rem;
+  gap: 3rem;
+  height: 8rem;
+}
+.wrapper .main .section__insurances .logos__wrapper .logos__track img {
+  height: 100%;
+  flex-shrink: 0;
 }
 .wrapper .main .section__doctors {
   display: flex;
