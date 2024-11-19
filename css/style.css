@@ -207,7 +207,6 @@ h6 {
 }
 .wrapper .main .section__hero .hero__form-container form .form__item input[type=date] {
   max-width: 32rem;
-  width: 100% !important;
   box-sizing: border-box;
 }
 .wrapper .main .section__hero .hero__form-container form .form__item input:focus {
