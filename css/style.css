@@ -206,11 +206,38 @@ h6 {
   color: #acacac;
 }
 .wrapper .main .section__hero .hero__form-container form .form__item input[type=date] {
-  max-width: 32rem;
   box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  -moz-appearance: textfield;
+  -webkit-appearance: none;
+  position: relative;
 }
 .wrapper .main .section__hero .hero__form-container form .form__item input:focus {
   outline: 1px solid #4ca89c;
+}
+.wrapper .main .section__hero .hero__form-container form .form__item input[type=date]::placeholder,
+.wrapper .main .section__hero .hero__form-container form .form__item input[type=time]::placeholder {
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+}
+.wrapper .main .section__hero .hero__form-container form .form__item input[type=date]::-webkit-calendar-picker-indicator,
+.wrapper .main .section__hero .hero__form-container form .form__item input[type=time]::-webkit-calendar-picker-indicator {
+  background: none;
+  bottom: 0;
+  color: transparent;
+  height: auto;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: auto;
+}
+.wrapper .main .section__hero .hero__form-container form .form__item input[type=date]::-webkit-datetime-edit,
+.wrapper .main .section__hero .hero__form-container form .form__item input[type=time]::-webkit-datetime-edit {
+  text-align: center;
+  width: 100%;
 }
 .wrapper .main .section__hero .hero__form-container form .form__item input::placeholder {
   color: #acacac; /* Колір тексту підказки */
