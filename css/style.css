@@ -204,46 +204,23 @@ h6 {
   padding: 0 16px;
   height: 48px;
   color: #acacac;
+  box-sizing: border-box;
 }
 .wrapper .main .section__hero .hero__form-container form .form__item input[type=date] {
-  box-sizing: border-box;
-  display: flex;
-  width: 100%;
-  -moz-appearance: textfield;
+  -moz-appearance: none;
   -webkit-appearance: none;
-  position: relative;
+  appearance: none;
+  margin: 0;
 }
 .wrapper .main .section__hero .hero__form-container form .form__item input:focus {
   outline: 1px solid #4ca89c;
 }
-.wrapper .main .section__hero .hero__form-container form .form__item input[type=date]::placeholder,
-.wrapper .main .section__hero .hero__form-container form .form__item input[type=time]::placeholder {
-  font-size: 17px;
-  font-style: normal;
-  font-weight: 400;
-}
-.wrapper .main .section__hero .hero__form-container form .form__item input[type=date]::-webkit-calendar-picker-indicator,
-.wrapper .main .section__hero .hero__form-container form .form__item input[type=time]::-webkit-calendar-picker-indicator {
-  background: none;
-  bottom: 0;
-  color: transparent;
-  height: auto;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: auto;
-}
-.wrapper .main .section__hero .hero__form-container form .form__item input[type=date]::-webkit-datetime-edit,
-.wrapper .main .section__hero .hero__form-container form .form__item input[type=time]::-webkit-datetime-edit {
-  text-align: center;
-  width: 100%;
-}
 .wrapper .main .section__hero .hero__form-container form .form__item input::placeholder {
-  color: #acacac; /* Колір тексту підказки */
-  opacity: 1; /* Робимо підказку повністю видимою */
+  color: #acacac;
+  opacity: 1;
 }
 .wrapper .main .section__hero .hero__form-container form .form__item select {
+  display: flex;
   width: 100%;
   height: 48px;
   font-size: 1rem !important;
@@ -254,6 +231,9 @@ h6 {
 }
 .wrapper .main .section__hero .hero__form-container form .form__item select:focus {
   outline: 1px solid #4ca89c;
+}
+.wrapper .main .section__hero .hero__form-container form .form__item select option {
+  display: flex;
 }
 .wrapper .main .section__hero .hero__form-container form .main-btn {
   margin-top: 2rem;
@@ -506,6 +486,17 @@ h6 {
   }
   .wrapper .main .section__hero .heroSwiper {
     display: none;
+  }
+  .wrapper .main .section__insurances .logos__wrapper::after {
+    width: 3rem;
+  }
+  .wrapper .main .section__insurances .logos__wrapper::before {
+    width: 3rem;
+  }
+  .wrapper .main .section__insurances .logos__wrapper .logos__track {
+    padding: 0 1rem;
+    gap: 0rem;
+    height: 5rem;
   }
   .wrapper .main .section__doctors {
     gap: 2rem;
