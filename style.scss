@@ -159,7 +159,7 @@ h6 {
         display: flex;
         flex-direction: column;
         max-width: 32rem;
-        width: 100%;
+        width: 70vw;
         padding: 0 16px;
         justify-content: center;
         gap: 2rem;
@@ -200,20 +200,27 @@ h6 {
               padding: 0 16px;
               height: 48px;
               color: #acacac;
+              box-sizing: border-box;
+
               &[type="date"] {
-                max-width: 32rem;
-                width: 100% !important;
-                box-sizing: border-box;
+                -moz-appearance: none;
+                -webkit-appearance: none;
+                appearance: none;
+                margin: 0;
               }
+
               &:focus {
                 outline: 1px solid $clr-kl-2;
               }
             }
+
             input::placeholder {
-              color: #acacac; /* Колір тексту підказки */
-              opacity: 1; /* Робимо підказку повністю видимою */
+              color: #acacac;
+              opacity: 1;
             }
+
             select {
+              display: flex;
               width: 100%;
               height: 48px;
               &:focus {
@@ -225,6 +232,7 @@ h6 {
               padding: 0 16px;
               color: #acacac;
               option {
+                display: flex;
               }
             }
           }
@@ -328,19 +336,18 @@ h6 {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 24px;
+        gap: 56px;
         .item {
-          flex: 1 1 400px; /* Додаємо гнучкість */
-          max-width: 35rem;
-          min-width: 30.375rem; /* Мінімальна ширина перед переходом на наступний рядок */
+          flex: 1 1 250px; /* Додаємо гнучкість */
+          max-width: 16.875rem;
+          min-width: 13rem; /* Мінімальна ширина перед переходом на наступний рядок */
           display: flex;
+          flex-direction: column;
           background-color: $clr-wt;
-          padding: 0.75rem;
           border-radius: 0.5rem;
-          gap: 1.5rem;
           img {
-            max-width: 230px;
-            max-height: 330px;
+            max-width: 100%;
+            max-height: 370px;
             border-radius: 0.375rem;
             object-fit: cover;
           }
@@ -348,6 +355,7 @@ h6 {
             display: flex;
             flex-direction: column;
             gap: 1.25rem;
+            padding: 0.75rem;
             .item__title {
               display: flex;
               gap: 0.25rem;
@@ -365,6 +373,7 @@ h6 {
             }
             ul {
               display: flex;
+              display: none;
               flex-direction: column;
               gap: 0.5rem;
               li {
@@ -386,8 +395,7 @@ h6 {
             }
             p {
               font-size: 0.875rem;
-              color: $clr-kl-2;
-              margin-top: auto;
+              color: $clr-kl-1;
             }
           }
         }
@@ -495,6 +503,10 @@ h6 {
         padding-top: 4rem;
         padding-bottom: 4rem;
         .hero__form-container {
+          width: 100%;
+          h1 {
+            font-size: 2rem;
+          }
           max-width: none;
           .form__row {
             flex-direction: column;
@@ -504,56 +516,33 @@ h6 {
           display: none;
         }
       }
+      .section__insurances {
+        .logos__wrapper {
+          &::after {
+            width: 3rem;
+          }
+          &::before {
+            width: 3rem;
+          }
+          .logos__track {
+            padding: 0 1rem;
+            gap: 0rem;
+            height: 5rem;
+          }
+        }
+      }
       .section__doctors {
         gap: 2rem;
         .doctors__content {
           padding: 0 16px;
           gap: 1rem;
           .item {
-            flex: 1 0 0; /* Додаємо гнучкість */
-            min-width: inherit !important; /* Мінімальна ширина перед переходом на наступний рядок */
-            max-width: 20rem !important;
             width: 100%;
             background-color: $clr-wt;
-            padding: 0.75rem;
             border-radius: 0.5rem;
             gap: 1.5rem;
             flex-direction: column;
             align-items: center;
-            img {
-              max-width: none !important;
-              max-height: 330px;
-              border-radius: 0.375rem;
-              object-fit: cover;
-            }
-            .info {
-              display: flex;
-              flex-direction: column;
-              gap: 1.25rem;
-              .item__title {
-                display: flex;
-                gap: 0.25rem;
-                flex-direction: column;
-                .name {
-                  line-height: 100%;
-                  font-size: 1.5rem;
-                  font-weight: 700;
-                  color: $clr-kl-1;
-                }
-                .prof {
-                  font-size: 1.125rem;
-                  color: $clr-kl-2;
-                }
-              }
-              ul {
-                display: none;
-              }
-            }
-            p {
-              font-size: 0.875rem;
-              color: $clr-kl-2;
-              margin-top: auto;
-            }
           }
         }
       }
